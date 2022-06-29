@@ -6,8 +6,7 @@
 trigger:
 - main
 
-pool:
-  vmImage: 'SK-PC'
+pool: 'Agent001'
 
 variables:
   solution: '**/*.sln'
