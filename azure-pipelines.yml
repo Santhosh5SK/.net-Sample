@@ -14,15 +14,15 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'restore'
+    feedsToUse: 'config'
+    
 - task: NuGetCommand@2
   inputs:
     restoreSolution: '$(solution)'
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'custom'
-    custom: 'dotnet restore ./projects/WebApplication1/WebApplication1.csproj'
-    
-
 - task: UseDotNet@2
   displayName: 'creating the faremwork'
   inputs:
