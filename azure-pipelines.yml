@@ -28,7 +28,8 @@ steps:
     performMultiLevelLookup: true
 - task: VSBuild@1
   inputs:
-    solution: '$(solution)'
+    solution: '**\*.sln' 
+    vsVersion: 'latest'
     msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
